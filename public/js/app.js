@@ -5563,10 +5563,17 @@ function Dashboard(props) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./resources/js/Pages/Login.js":
 /*!*************************************!*\
   !*** ./resources/js/Pages/Login.js ***!
   \*************************************/
+=======
+/***/ "./resources/js/Pages/Prototype/Login.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Prototype/Login.js ***!
+  \***********************************************/
+>>>>>>> f4d2dcfecc303ec8e9e315e9ccf8b5b5ec283d52
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5579,11 +5586,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+<<<<<<< HEAD
 function Login(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
       children: "Hello World"
     })
+=======
+
+function Login(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      children: "Hello Namaku Teguh"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      children: "Coba Test"
+    })]
+>>>>>>> f4d2dcfecc303ec8e9e315e9ccf8b5b5ec283d52
   });
 }
 
@@ -59113,8 +59131,13 @@ var map = {
 	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
+<<<<<<< HEAD
 	"./Login": "./resources/js/Pages/Login.js",
 	"./Login.js": "./resources/js/Pages/Login.js",
+=======
+	"./Prototype/Login": "./resources/js/Pages/Prototype/Login.js",
+	"./Prototype/Login.js": "./resources/js/Pages/Prototype/Login.js",
+>>>>>>> f4d2dcfecc303ec8e9e315e9ccf8b5b5ec283d52
 	"./Welcome": "./resources/js/Pages/Welcome.js",
 	"./Welcome.js": "./resources/js/Pages/Welcome.js"
 };

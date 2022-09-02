@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {
 
 Route::prefix('prototype')->group(function(){
     route::get('/login', function(){
-        return Inertia::render('Login');
+        return Inertia::render('Prototype/Login');
     });
 });
 
