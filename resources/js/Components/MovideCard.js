@@ -1,4 +1,5 @@
 
+import { Link } from '@inertiajs/inertia-react'
 import React from 'react'
 
 const MovieCard = ({
@@ -22,7 +23,7 @@ const MovieCard = ({
         -translate-x-1/2 z-20 transition ease-in-out duration-500">
                 <img src="/icons/ic_play.svg" class="" width="50" alt="" />
             </div>
-            <a href={slug} class="inset-0 absolute z-50"></a>
+            <a href={route('prototype.movie.show', slug)} class="inset-0 absolute z-50"></a>
         </div>
     )
 }
