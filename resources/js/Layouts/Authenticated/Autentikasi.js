@@ -2,7 +2,8 @@ import React from 'react'
 import Sidebar from '@/Layouts/Authenticated/Sidebar'
 import Topbar from '@/Layouts/Authenticated/Topbar'
 
-const Autentikasi = ({ children }) => {
+const Autentikasi = ({ children, auth }) => {
+
   return (
     <>
       <div className="mx-auto max-w-screen hidden lg:block">
@@ -11,7 +12,7 @@ const Autentikasi = ({ children }) => {
 
         <div className="ml-[300px] px-[50px]">
           <div className="py-10 flex flex-col gap-[50px]">
-            <Topbar />
+            <Topbar name={auth.user.name}/>
             <main>{children}</main>
           </div>
         </div>

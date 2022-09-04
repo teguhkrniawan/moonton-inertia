@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react'
 import {Link} from '@inertiajs/inertia-react'
 
-const Topbar = () => {
+const Topbar = ({ name }) => {
 
     const [dropDownOpen, setDropDownOpen] = useState(true)
     const dropDownTarget = useRef()
@@ -11,7 +11,6 @@ const Topbar = () => {
     }, [dropDownOpen])
 
     const triggerDropDown = () => {
-        console.log('execute')
         setDropDownOpen(!dropDownOpen)
         if(dropDownOpen){
             dropDownTarget.current.classList.remove('hidden')
@@ -31,7 +30,7 @@ const Topbar = () => {
                 />
                 <div className="flex items-center gap-4">
                     <span className="text-black text-sm font-medium">
-                        Welcome, Annisa
+                        Welcome, {name}
                     </span>
                     <div className="collapsible-dropdown flex flex-col gap-2 relative cursor-pointer">
                         <div

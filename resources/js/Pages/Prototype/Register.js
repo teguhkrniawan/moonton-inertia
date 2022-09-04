@@ -60,9 +60,9 @@ const Register = () => {
                                     <Input
                                         placeholder="Type your fullname"
                                         type='text'
-                                        name='fullname'
+                                        name='name'
                                         handleChange={onHandleChange}
-                                        value={data.fullname}
+                                        value={data.name}
                                         defaultValue='Teguh Kurniawan' />
                                 </div>
                                 <div>

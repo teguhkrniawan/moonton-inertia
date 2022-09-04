@@ -91,7 +91,7 @@ const Login = () => {
                                         Login
                                     </span>
                                 </Button>
-                                <Link href={route('prototype.register')}>
+                                <Link href={route('register')}>
                                     <Button type='button' variant='light-outline'>
                                         <span className="text-base text-white">
                                             Create New Account
