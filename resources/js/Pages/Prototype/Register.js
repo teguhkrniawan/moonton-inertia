@@ -2,10 +2,36 @@ import React, { useEffect, useState } from 'react';
 import Input from './../../Components/Input';
 import Label from '@/Components/Label';
 import Button from '@/Components/Button';
-import { Link, Head } from '@inertiajs/inertia-react';
+import ValidationErrors from '@/Components/ValidationErrors';
+import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
 
 const Register = () => {
+
+    const { data, setData, post, processing, errors, reset } = useForm({
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+    });
+
+    useEffect(() => {
+        return () => {
+            reset('password', 'password_confirmation');
+        };
+    }, []);
+
+    const onHandleChange = (event) => {
+        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
+    };
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        post(route('register'));
+    };
+
+
     return (
         <>
             <Head title='Sign Up' />
@@ -19,14 +45,15 @@ const Register = () => {
                         <img src="/images/moonton-white.svg" alt="" />
                         <div className="my-[70px]">
                             <div className="font-semibold text-[26px] mb-3">
-                                Sign Up
+                                Sign Up New
                             </div>
                             <p className="text-base text-[#767676] leading-7">
                                 Explore our new movies and get <br />
                                 the better insight for your life
                             </p>
+                            <ValidationErrors errors={errors} />
                         </div>
-                        <form className="w-[370px]">
+                        <form className="w-[370px]" onSubmit={submit}>
                             <div className="flex flex-col gap-6">
                                 <div>
                                     <Label>Full Name</Label>
@@ -34,6 +61,8 @@ const Register = () => {
                                         placeholder="Type your fullname"
                                         type='text'
                                         name='fullname'
+                                        handleChange={onHandleChange}
+                                        value={data.fullname}
                                         defaultValue='Teguh Kurniawan' />
                                 </div>
                                 <div>
@@ -41,6 +70,8 @@ const Register = () => {
                                     <Input
                                         placeholder="Type your Email"
                                         type='email'
+                                        handleChange={onHandleChange}
+                                        value={data.email}
                                         name='email' />
                                 </div>
                                 <div>
@@ -48,12 +79,22 @@ const Register = () => {
                                     <Input
                                         placeholder="Type your Password"
                                         type='password'
+                                        handleChange={onHandleChange}
+                                        value={data.password}
                                         name='password' />
+                                </div>
+                                <div>
+                                    <label className="text-base block mb-2">Confirm Password</label>
+                                    <Input
+                                        placeholder="Type your Password Again"
+                                        type='password'
+                                        handleChange={onHandleChange}
+                                        value={data.password_confirmation}
+                                        name='password_confirmation' />
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <Button type='button'
-                                    variant='primary'>
+                                <Button processing={processing} type='submit' variant='primary'>
                                     <span className="text-base font-semibold">
                                         Sign Up
                                     </span>
