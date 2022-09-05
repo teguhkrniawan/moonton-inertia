@@ -16,7 +16,9 @@ class MovieController extends Controller
         $movie = DB::table('movies')
                         ->where('slug', $slug)
                         ->first();
-        return $movie;
+        return Inertia::render('User/Movie/Index', [
+            "movie" => $movie
+        ]);
 
     }
 }
