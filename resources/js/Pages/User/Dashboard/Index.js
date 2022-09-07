@@ -18,6 +18,8 @@ const Dashboard = ({ auth, featured_movie, movies }) => {
         draggable: ">1",
     }
 
+    console.log(auth)
+
     return <Autentikasi auth={auth}>
         <>
             <Head>

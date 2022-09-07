@@ -22,7 +22,9 @@ Route::redirect('/', '/login');
 Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashboard.')->group(function() {
     route::get('/', [DashboardController::class, 'index'])->name('index');
     route::get('movie/{movie:slug}', [MovieController::class, 'show'])->name('movie.show');
+
     route::get('subs-plan', [SubsController::class, 'index'])->name('subs.index');
+    route::post('subs-plan/{subsPlanItem}/user-subscription', [SubsController::class, 'user_subscription'])->name('subs.user_subscription');
 });
 
 Route::prefix('prototype')->name('prototype.')->group(function(){

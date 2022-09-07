@@ -9,6 +9,7 @@ const SubscriptionCard = ({
     durationInMonth,
     onSelectedSubs
 }) => {
+    
     return (
         <>
             {/* Basic Card */}
@@ -37,7 +38,7 @@ const SubscriptionCard = ({
                             }
                         </div>
 
-                        <div>
+                        <div onClick={onSelectedSubs}>
                             <Button type="button" variant="white-outline">
                                 <span className="text-base">Start Basic</span>
                             </Button>
@@ -84,7 +85,7 @@ const SubscriptionCard = ({
                             }
                         </div>
 
-                        <div>
+                        <div onClick={onSelectedSubs}>
                             <Button type='button' variant="primary">
                                 <span className="text-base font-semibold">Subscribe Now</span>
                             </Button>

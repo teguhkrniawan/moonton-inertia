@@ -1,10 +1,17 @@
 import SubscriptionCard from '@/Components/SubscriptionCard'
 import Autentikasi from '@/Layouts/Authenticated/Autentikasi'
+import { Inertia } from '@inertiajs/inertia'
 import React from 'react'
 
 export const Subscription = ({ auth, subscription }) => {
 
     // console.log('subs', subscription)
+
+    const selectSubs = (id) => {
+        Inertia.post(route('user.dashboard.subs.user_subscription', {
+            subsPlanItem: id
+        }))
+    }
 
     return (
         <Autentikasi auth={auth}>
@@ -30,6 +37,7 @@ export const Subscription = ({ auth, subscription }) => {
                                     feature={
                                         JSON.parse(item.features)
                                     }
+                                    onSelectedSubs={() => selectSubs(item.id)}
                                 />
                             ))
                         }
