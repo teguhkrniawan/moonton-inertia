@@ -1,6 +1,5 @@
 import { Link } from '@inertiajs/inertia-react'
 import React from 'react'
-import route from 'vendor/tightenco/ziggy/src/js'
 
 const MenuItem = ({
     link,
@@ -11,17 +10,15 @@ const MenuItem = ({
 }) => {
 
     return (
-        <>
-            <Link 
-                href={ link ? route(link) : null } 
-                className={`side-link ${isActive && 'active'}`}
-                method={method}
-                as="button"
-            >
-                { icon }
-                { text }
-            </Link>
-        </>
+        <Link 
+            href={ link ? route(link) : null } 
+            className={`side-link ${isActive && 'active'}`}
+            method={method}
+            as="button"
+        >
+            { icon }
+            { text }
+        </Link>
     )
 }
 
