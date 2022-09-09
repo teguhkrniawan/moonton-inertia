@@ -7,7 +7,8 @@ const Subsdate = (
 
     const remainingDays = activeDays - remainingActiveDays
     const loadingProgess = () => {
-        const progress = remainingActiveDays / activeDays;
+        const progress = remainingDays / activeDays
+
         if(progress < 0.25){
             return 'w-3/12'
         }
@@ -33,7 +34,7 @@ const Subsdate = (
                     {remainingActiveDays} of {activeDays} hari
                 </div>
                 <div className="rounded-full w-full h-[6px] bg-[#333333]">
-                    <div className={`rounded-full h-full bg-alerange ${loadingProgess}`}></div>
+                    <div className={`rounded-full h-full bg-alerange ${loadingProgess()}`}></div>
                 </div>
             </div>
         </div>
