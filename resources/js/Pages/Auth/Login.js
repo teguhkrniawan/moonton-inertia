@@ -26,7 +26,7 @@ const Login = () => {
 
     const submit = (e) => {
         e.preventDefault();
-        console.log(data)
+        // console.log(data)
         post(route('login'));
     };
 

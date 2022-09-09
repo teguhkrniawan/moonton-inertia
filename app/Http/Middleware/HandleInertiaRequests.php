@@ -36,15 +36,15 @@ class HandleInertiaRequests extends Middleware
             return null;
         }
 
-        // $lastDay = Carbon::parse($activePlan->updated_at)->addMonths($activePlan->subscriptionPlan->active_period_in_months);
-        // $activeDays = Carbon::parse($activePlan->updated_at)->diffInDays($lastDay);
-        // $remaingActiveDays = Carbon::parse($activePlan->expired_date)->diffInDays(Carbon::now());
+        $lastDay = Carbon::parse($activePlan->updated_at)->addMonths($activePlan->subscriptionPlan->active_in_month);
+        $activeDays = Carbon::parse($activePlan->updated_at)->diffInDays($lastDay);
+        $remaingActiveDays = Carbon::parse($activePlan->expired_date)->diffInDays(Carbon::now());
 
-        // return [
-        //     'name' => $activePlan->subscriptionPlan->name,
-        //     'remainingActiveDays' => $remaingActiveDays,
-        //     'activeDays' => $activeDays,
-        // ];
+        return [
+            'name' => $activePlan->subscriptionPlan->name,
+            'remainingActiveDays' => $remaingActiveDays,
+            'activeDays' => $activeDays,
+        ];
     }
     /**
      * Define the props that are shared by default.

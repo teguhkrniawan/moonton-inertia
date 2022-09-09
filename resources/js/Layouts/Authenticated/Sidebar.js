@@ -2,7 +2,8 @@ import { Link } from '@inertiajs/inertia-react'
 import React from 'react'
 import Subsdate from './Subsdate'
 
-const Sidebar = () => {
+const Sidebar = ({auth}) => {
+
     return (
         <>
             <aside className="fixed z-50 w-[300px] h-full">
@@ -88,7 +89,15 @@ const Sidebar = () => {
                             </a>
                         </div>
 
-                        <Subsdate />
+                       {
+                           auth.isActive && (
+                                <Subsdate 
+                                    name={auth.isActive.name}
+                                    remainingActiveDays={auth.isActive.remainingActiveDays}
+                                    activeDays={auth.isActive.activeDays}
+                                />
+                           )
+                       }
                     </div>
                 </div>
             </aside>
