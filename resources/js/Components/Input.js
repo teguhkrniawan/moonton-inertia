@@ -29,7 +29,7 @@ export default function Input({
                 name={name}
                 value={value}
                 className={
-                    `rounded-2xl bg-form-bg py-[13px] px-7 w-full input-${variant} ${className}`
+                    `rounded-2x  py-[13px] px-7 w-full input-${variant} ${className}`
                 }
                 ref={input}
                 autoComplete={autoComplete}

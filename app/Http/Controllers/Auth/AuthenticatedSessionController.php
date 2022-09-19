@@ -37,6 +37,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        // apabila roles yang login adalah direktur
+        if(Auth::user()->hasRole('direktur')){
+            return redirect(route('direktur.dashboard.movie.index'));
+        }
+
+        // apabila roles yang login adalah admin
+        if(Auth::user()->hasRole('admin')){
+            return redirect(route('admin.dashboard.movie.index'));
+        }
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

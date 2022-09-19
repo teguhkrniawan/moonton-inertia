@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 
@@ -21,5 +20,12 @@ class UserTableSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
         $admin->assignRole('admin');
+
+        $direktur = User::create([
+            'name' => 'Direktur',
+            'email' => 'direktur@moonton.test',
+            'password' => bcrypt('password')
+        ]);
+        $direktur->assignRole('direktur');
     }
 }
