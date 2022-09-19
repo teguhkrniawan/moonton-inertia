@@ -39,7 +39,11 @@ const Index = ({auth, flashMessage, movies}) => {
                                     <td>{item.category}</td>
                                     <td>{item.rating.toFixed(1)}</td>
                                     <td>
-                                        <Button type='button' variant="warning">Edit</Button>
+                                        <Link href={route('admin.dashboard.movie.edit', item.id)}>
+                                            <Button type='button' variant="warning">Edit</Button>
+                                        </Link>
+                                    </td>
+                                    <td>
                                         <Button type='button' variant="danger">Hapus</Button>
                                     </td>
                                 </tr>
